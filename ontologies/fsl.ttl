@@ -1,0 +1,202 @@
+# Prefixes of interest
+
+@prefix : <http://www.softlang.org/ontologies/sle/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix pedia: <https://en.wikipedia.org/wiki/> .
+@base <http://www.softlang.org/ontologies/sle/> .
+
+
+# This ontology
+
+<http://www.softlang.org/ontologies/sle> rdf:type owl:Ontology .
+
+
+# Introducing the root for formal tools in this ontology (taxonomy)
+
+:Formal_tool rdfs:subClassOf owl:Class ;
+             rdfs:comment "The nominal root of this ontology"@en .
+
+
+# Keeping track of any issues with formal tools
+
+:issue rdf:type owl:AnnotationProperty ;
+       rdfs:comment "Keep track of issues with this ontology" ;
+       rdfs:domain :Formal_tool ;
+       rdfs:range rdf:langString .
+
+
+# Assocating formal tools with areas
+
+:area rdf:type owl:AnnotationProperty ;
+       rdfs:comment "Associate formals tools with areas" ;
+       rdfs:domain :Formal_tool ;
+       rdfs:range :Area .
+
+:prio rdf:type owl:AnnotationProperty ;
+       rdfs:comment "Declare the priorities of areas" ;
+       rdfs:domain :Area ;
+       rdfs:range rdf:string .
+
+
+# Areas of interest
+
+:SLE rdf:type :Area ;
+     rdfs:comment "Software Language Engineering" ;
+     :prio "high".
+
+:CC rdf:type :Area ;
+    rdfs:comment "Compiler Construction" ;
+    :prio "high".
+
+:PLT rdf:type :Area ;
+    rdfs:comment "Programming Language Theory" ;
+    :prio "high".
+
+:TCS rdf:type :Area ;
+    rdfs:comment "Theoretical Computer Science" ;
+    :prio "medium".
+
+:SE rdf:type :Area ;
+    rdfs:comment "Software Engineering" ;
+    :prio "low".
+
+:FM rdf:type :Area ;
+    rdfs:comment "Formal Methods" ;
+    :prio "low".
+
+:KR rdf:type :Area ;
+    rdfs:comment "Knowledge Representation & Reasoning" ;
+    :prio "low".
+
+:CL rdf:type :Area ;
+    rdfs:comment "Computational Linguistics" ;
+    :prio "low".
+
+:NLP rdf:type :Area ;
+    rdfs:comment "Natural Language Processing" ;
+    :prio "low".
+
+
+# Points of reference
+
+:Context-free_grammar rdf:type :Formal_tool ;
+		      rdfs:comment "A fundamental formalism in parsing" ;
+		      owl:sameAs pedia:Context-free_grammar ;
+		      :area :CC ;
+		      :area :SLE .
+
+:Parsing_expression_grammar rdf:type :Formal_tool ;
+               rdfs:comment "A more modern approach to parsing"@en ;
+	       owl:sameAs pedia:Parsing_expression_grammar ;
+	       :area :CC ;
+	       :area :SLE .
+
+:Extended_Backus\-Naur_form rdf:type :Formal_tool ;
+			    rdfs:comment "A metasyntax (i.e., a syntax for syntaxes)"@en ;
+			    owl:sameAs pedia:Extended_Backus\-Naur_form ;
+		      	    :area :CC ;
+		      	    :area :SLE .
+
+:Regular_grammar rdf:type :Formal_tool ;
+		 rdfs:comment "A fundamental formalism in parsing, in fact, scanning"@en ;
+		 owl:sameAs pedia:Regular_grammar ;
+		 :area :CC ;
+		 :area :SLE .
+
+:Attribute_grammar rdf:type :Formal_tool ;
+		   rdfs:comment "An important language-implementation technique"@en ;
+		   owl:sameAs pedia:Attribute_grammar ;
+		   :area :CC ;
+		   :area :SLE .
+
+:Term_rewriting_system rdf:type :Formal_tool ;
+                  rdfs:comment "A formal and rule-based transformation approach"@en ;
+		  owl:sameAs pedia:Rewriting\#Term_rewriting_systems ;
+		  :area :CC ;
+		  :area :SLE .
+
+:Lambda_calculus rdf:type :Formal_tool ;
+		 rdfs:comment "All lambda calculi used across PLT, TCS, etc."@en ;
+		 rdfs:seeAlso pedia:Lambda_calculus ;
+		 :issue "Conflation of the basic, untyped lambda calculus vs. all lambda calculi"@en ;
+		 :area :PLT .
+
+:Untyped_lambda_calculus rdf:type :Formal_tool ;
+		   	 rdfs:comment "The basic, untyped lambda calculus"@en ;
+		  	 rdfs:seeAlso pedia:Lambda_calculus ;
+			 :issue "Conflation of the basic untyped lambda calculus vs. all lambda calculi"@en ;
+		 	 :area :PLT .
+
+:Simply_typed_lambda_calculus rdf:type :Formal_tool ;
+			      rdfs:comment "The simply typed lambda calculus"@en ;
+			      owl:sameAs pedia:Simply_typed_lambda_calculus ;
+			      :area :PLT .
+
+:System_F rdf:type :Formal_tool ;
+	  rdfs:comment "A lambda calculus with polymorphic types"@en ;
+	  owl:sameAs pedia:System_F ;
+	  :area :PLT .
+
+:Lambda_cube rdf:type :Formal_tool ;
+		  rdfs:comment "All typed lambda calculi"@en ;
+		  owl:sameAs pedia:Lambda_cube ;
+		  :area :PLT .
+
+:Denotational_semantics rdf:type :Formal_tool ;
+		     	rdfs:comment "The denotational style of semantics specification"@en ;
+			owl:sameAs pedia:Denotational_semantics ;
+		 	:area :PLT .
+
+:Operational_semantics rdf:type :Formal_tool ;
+		       rdfs:comment "The operational style of semantics specification"@en ;
+	   	       owl:sameAs pedia:Operational_semantics ;
+		       :area :PLT .
+
+:Axiomatic_semantics rdf:type :Formal_tool ;
+		     rdfs:comment "The axiomatic style of semantics specification"@en ;
+		     owl:sameAs pedia:Axiomatic_semantics ;
+		     :area :PLT .
+
+:Process_calculus rdf:type :Formal_tool ;
+		  rdfs:comment "All calculi for modelling concurrent systems"@en ;
+		  owl:sameAs pedia:Process_calculus ;
+		  :area :PLT ;
+		  :area :TCS .
+
+:Communicating_sequential_processes rdf:type :Formal_tool ;
+				    rdfs:comment "A concrete calculus on concurrency"@en ;
+				    owl:sameAs pedia:Communicating_sequential_processes ;
+		  		    :area :PLT ;
+		  		    :area :TCS .
+
+:Calculus_of_communicating_systems rdf:type :Formal_tool ;
+				   rdfs:comment "A concrete calculus on concurrency"@en ;
+				   owl:sameAs pedia:Calculus_of_communicating_systems ;
+		  		   :area :PLT ;
+		  		   :area :TCS .
+
+:UML_state_machine rdf:type :Formal_tool ;
+		   rdfs:comment "A modeling language for finite automata"@en ;
+		   owl:sameAs pedia:UML_state_machine ;
+		   :area :FM ;
+		   :area :SE .
+
+:Hoare_logic rdf:type :Formal_tool ;
+	     rdfs:comment "A prominent approach for program verification"@en ;
+	     owl:sameAs pedia:Hoare_logic ;
+	     :area :FM .
+
+:Description_logic rdf:type :Formal_tool ;
+		   rdfs:comment "A prominent family of logics for ontologies"@en ;
+		   owl:sameAs pedia:Description_logic ;
+		   :area :KR .
+
+:Dependency_grammar rdf:type :Formal_tool ;
+		    rdfs:comment "Grammatical theories based on dependency"@en ;
+		    owl:sameAs pedia:Dependency_grammar ;
+		    :area :CL ;
+		    :area :NLP .
