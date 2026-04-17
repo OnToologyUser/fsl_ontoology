@@ -5,7 +5,7 @@ The 1st release went through 9 phases.
 The corresponding snapshots of the emerging ontology are linked via
 the commit SHA below.
 
-Summaries CbatGPT conversations used in the development are avaible
+Summaries of CbatGPT conversations used in the development are avaible
 under [misc/1st_release/conversations](https://github.com/softlang/fsl/tree/main/misc/1st_release/conversations)
 
 ## Phase 1: Taxonomy initialization
