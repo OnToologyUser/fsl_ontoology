@@ -37,7 +37,7 @@
     rdfs:subClassOf tbox:SoftwareArtifact .
 
 :GrammarOfGrammarsArtifact a tbox:ArtifactEntity ;
-    rdfs:label "Grammar artifact"@en ;
+    rdfs:label "Grammar of grammars artifact"@en ;
     tbox:elementOf le:GrammarMetalanguage ;
     tbox:defines le:GrammarMetalanguage ;
     rdfs:subClassOf tbox:SoftwareArtifact .

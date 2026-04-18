@@ -4,6 +4,7 @@
 
 ve:TechnologySpacesMustHaveConformsToShape
   a sh:NodeShape ;
+  rdfs:comment "TODO" ;
   sh:targetClass ce:TechnologicalSpace ;
   sh:sparql [
     a sh:SPARQLConstraint ;
