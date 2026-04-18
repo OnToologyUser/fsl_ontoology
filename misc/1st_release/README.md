@@ -6,7 +6,7 @@ The corresponding snapshots of the emerging ontology are linked via
 the commit SHA below.
 
 Summaries of CbatGPT conversations used in the development are avaible
-under [misc/1st_release/conversations](https://github.com/softlang/fsl/tree/main/misc/1st_release/conversations)
+under [misc/1st_release/conversations](https://github.com/softlang/fsl/tree/main/misc/1st_release/conversations).
 
 ## Phase 1: Taxonomy initialization
 
@@ -50,4 +50,5 @@ Intermediate SHAs:
 * d. [Addition of SHACL-based validation](https://github.com/softlang/fsl/commit/abec42f5795f47a3efd014f9cf7c9ec70d7ae92c)
 * e. [Filing, again, a number of issues](https://github.com/softlang/fsl/commit/c235855c52d82b492bf52bef4addd72b8c20fd49)
 * f. [Resolution, again, of the filed issues](https://github.com/softlang/fsl/commit/f17f379a8f01cf92e0e45171340fbe6b783ce59d)
+* g. [Fixing SHACL-based validation](https://github.com/softlang/fsl/commit/8bf6a13b9f79f78fc764b9c43f5335acdae72a9b)
 
