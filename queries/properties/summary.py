@@ -16,6 +16,8 @@ def property_type(value):
         return "A"
     elif ln == "ObjectProperty":
         return "O"
+    elif ln == "DatatypeProperty":
+        return "D"
     else:
         return ""
 
@@ -39,7 +41,8 @@ WHERE {
   ?p rdf:type ?t .
   FILTER(?t IN (
       owl:AnnotationProperty,
-      owl:ObjectProperty
+      owl:ObjectProperty,
+      owl:DatatypeProperty
   ))
   OPTIONAL {
     ?p rdfs:domain ?d .
