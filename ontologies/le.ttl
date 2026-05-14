@@ -14,12 +14,11 @@
     tbox:metamodelingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
     rdfs:comment "Programming languages are maintained in the pe module; this module keeps non-programming software languages and broad language-kind taxonomies."@en,
         "Sub-ontology / ABox for software languages"@en ;
-    owl:imports <http://www.softlang.org/ontologies/ce>,
-        <http://www.softlang.org/ontologies/tbox> .
+    owl:imports <http://www.softlang.org/ontologies/tbox> .
 
 
 
-:ConstraintLanguage ce:supports
+:ConstraintLanguage tbox:supports
         ce:ConstraintConcept,
         ce:DeclarativeParadigm,
         ce:LogicParadigm,
@@ -27,33 +26,33 @@
         ce:StaticTyping,
         ce:StrongTyping .
 
-:QueryLanguage ce:supports
+:QueryLanguage tbox:supports
         ce:QueryConcept,
         ce:DeclarativeParadigm,
         ce:PureComputation .
 
-:SchemaLanguage ce:supports
+:SchemaLanguage tbox:supports
         ce:SchemaConcept,
         ce:StaticTyping,
         ce:StrongTyping .
 
-:XMLQueryLanguage ce:supports
+:XMLQueryLanguage tbox:supports
         ce:QueryConcept,
         ce:DeclarativeParadigm,
         ce:Lists,
         ce:Namespaces .
 
-:XMLSchemaLanguage ce:supports
+:XMLSchemaLanguage tbox:supports
         ce:SchemaConcept,
         ce:StaticTyping,
         ce:StrongTyping,
         ce:Namespaces .
 
-:GrammarMetalanguage ce:supports
+:GrammarMetalanguage tbox:supports
         ce:GrammarConcept,
         ce:Recursion .
 
-:MetamodelingLanguage ce:supports
+:MetamodelingLanguage tbox:supports
         ce:ModelingConcept,
         ce:TransformationConcept,
         ce:Abstraction,
@@ -61,50 +60,50 @@
         ce:Namespaces,
         ce:Packages .
 
-:OntologyLanguage ce:supports
+:OntologyLanguage tbox:supports
         ce:KnowledgeRepresentationConcept,
         ce:QueryConcept,
         ce:DeclarativeParadigm,
         ce:LogicParadigm,
         ce:Namespaces .
 
-:ProofLanguage ce:supports
+:ProofLanguage tbox:supports
         ce:ProofConcept,
         ce:LogicParadigm .
 
-:TransformationLanguage ce:supports
+:TransformationLanguage tbox:supports
         ce:TransformationConcept,
         ce:Abstraction .
 
-:ModelTransformationLanguage ce:supports
+:ModelTransformationLanguage tbox:supports
         ce:ModelingConcept,
         ce:TransformationConcept,
         ce:Abstraction,
         ce:DataAbstraction .
 
-:ATL ce:supports
+:ATL tbox:supports
         ce:ModelingConcept,
         ce:TransformationConcept,
         ce:Abstraction,
         ce:DataAbstraction .
 
-:BackusNaurForm ce:supports
+:BackusNaurForm tbox:supports
         ce:GrammarConcept,
         ce:Recursion .
 
-:BNF ce:supports
+:BNF tbox:supports
         ce:GrammarConcept,
         ce:Recursion .
 
-:EBNF ce:supports
+:EBNF tbox:supports
         ce:GrammarConcept,
         ce:Recursion .
 
-:ExtendedBackusNaurForm ce:supports
+:ExtendedBackusNaurForm tbox:supports
         ce:GrammarConcept,
         ce:Recursion .
 
-:Ecore ce:supports
+:Ecore tbox:supports
         ce:ModelingConcept,
         ce:TransformationConcept,
         ce:Abstraction,
@@ -112,13 +111,13 @@
         ce:Namespaces,
         ce:Packages .
 
-:JSONSchema ce:supports
+:JSONSchema tbox:supports
         ce:SchemaConcept,
         ce:StaticTyping,
         ce:StrongTyping,
         ce:DataAbstraction .
 
-:MOF ce:supports
+:MOF tbox:supports
         ce:ModelingConcept,
         ce:TransformationConcept,
         ce:Abstraction,
@@ -126,7 +125,7 @@
         ce:Namespaces,
         ce:Packages .
 
-:OCL ce:supports
+:OCL tbox:supports
         ce:ConstraintConcept,
         ce:QueryConcept,
         ce:DeclarativeParadigm,
@@ -137,30 +136,30 @@
         ce:Tuples,
         ce:Lists .
 
-:OWL ce:supports
+:OWL tbox:supports
         ce:KnowledgeRepresentationConcept,
         ce:DeclarativeParadigm,
         ce:LogicParadigm,
         ce:Namespaces .
 
-:QVT ce:supports
+:QVT tbox:supports
         ce:ModelingConcept,
         ce:TransformationConcept,
         ce:Abstraction,
         ce:DataAbstraction .
 
-:RDFS ce:supports
+:RDFS tbox:supports
         ce:KnowledgeRepresentationConcept,
         ce:DeclarativeParadigm,
         ce:Namespaces .
 
-:RELAXNG ce:supports
+:RELAXNG tbox:supports
         ce:SchemaConcept,
         ce:StaticTyping,
         ce:StrongTyping,
         ce:Namespaces .
 
-:SHACL ce:supports
+:SHACL tbox:supports
         ce:ConstraintConcept,
         ce:SchemaConcept,
         ce:KnowledgeRepresentationConcept,
@@ -169,7 +168,7 @@
         ce:StaticTyping,
         ce:Namespaces .
 
-:ShEx ce:supports
+:ShEx tbox:supports
         ce:ConstraintConcept,
         ce:SchemaConcept,
         ce:KnowledgeRepresentationConcept,
@@ -177,32 +176,32 @@
         ce:StaticTyping,
         ce:StrongTyping .
 
-:SPARQL ce:supports
+:SPARQL tbox:supports
         ce:QueryConcept,
         ce:KnowledgeRepresentationConcept,
         ce:DeclarativeParadigm,
         ce:Namespaces .
 
-:XMLSchema ce:supports
+:XMLSchema tbox:supports
         ce:SchemaConcept,
         ce:StaticTyping,
         ce:StrongTyping,
         ce:Namespaces .
 
-:XPath ce:supports
+:XPath tbox:supports
         ce:QueryConcept,
         ce:DeclarativeParadigm,
         ce:Lists,
         ce:Namespaces .
 
-:XQuery ce:supports
+:XQuery tbox:supports
         ce:QueryConcept,
         ce:DeclarativeParadigm,
         ce:Lists,
         ce:Namespaces,
         ce:Recursion .
 
-:XSLT ce:supports
+:XSLT tbox:supports
         ce:TransformationConcept,
         ce:SchemaConcept,
         ce:DeclarativeParadigm .

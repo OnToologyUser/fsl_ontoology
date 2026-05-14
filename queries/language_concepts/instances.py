@@ -13,12 +13,11 @@ query = """
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX tbox: <http://www.softlang.org/ontologies/tbox#>
-PREFIX ce: <http://www.softlang.org/ontologies/ce#>
 
 SELECT
   ?i
 WHERE {
-  ?sc rdfs:subClassOf+ ce:LanguageConcept .
+  ?sc rdfs:subClassOf+ tbox:LanguageConcept .
   ?i rdf:type ?sc .
 }
 ORDER BY ?i

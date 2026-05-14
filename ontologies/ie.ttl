@@ -18,32 +18,32 @@
     owl:imports <http://www.softlang.org/ontologies/tbox> .
 
 :SupportsNameClashIssue a tbox:IssueEntity ;
+    tbox:target tbox:targets ;
     tbox:target tbox:supports ;
-    tbox:target ce:supports ;
-    tbox:critique "There are two different types of 'supports' in use. tbox:supports relates tools to languages, whereas ce:supports relates languages to concepts. They cannot be usefully combined under a shared abstraction, unless we are willing to have longer property names that, perhaps, include the range into the property name for disambiguation."@en ;
-    tbox:suggestion "Rename tbox:supports to tbox:targets, since a tool may be said to target a language."@en .
+    tbox:critique "The former tool-to-language property tbox:supports clashed by name with the language-to-concept support relation. The two relations have different domains, ranges, and intended meanings, so sharing the local name supports made the vocabulary ambiguous."@en ;
+    tbox:suggestion "Use tbox:targets for the tool-to-language relation, with tbox:isTargetedBy as its inverse. Reserve tbox:supports for the language-to-concept relation."@en .
 
 :LanguageConceptsNamespaceIssue a tbox:IssueEntity ;
-    tbox:target ce:LanguageConcept ;
-    tbox:target ce:CompositeConcept ;
-    tbox:target ce:LanguageSupportKind ;
-    tbox:target ce:LanguageSupportAssertion ;
-    tbox:target ce:LanguageConceptApplicability ;
-    tbox:target ce:ImplementationMechanismConcept ;
-    tbox:target ce:supports ;
-    tbox:target ce:nativelySupports ;
-    tbox:target ce:standardlySupports ;
-    tbox:target ce:assertedForConcept ;
-    tbox:target ce:assertedForLanguage ;
-    tbox:target ce:hasDominantForm ;
-    tbox:target ce:hasPrimaryMechanism ;
-    tbox:target ce:hasApplicability ;
-    tbox:target ce:hasComponent ;
-    tbox:target ce:hasPrimaryComponent ;
-    tbox:target ce:hasSecondaryComponent ;
-    tbox:target ce:hasSupportKind ;
-    tbox:critique "Several schema-level language-concept classes and properties are currently declared in the ce module, although they belong to the shared tbox vocabulary. This was previously considered acceptable, but the module boundary should now be cleaned up."@en ;
-    tbox:suggestion "Move all targeted class and property declarations from ce to tbox, change their namespace from ce to tbox, and update all references accordingly."@en ;
+    tbox:target tbox:LanguageConcept ;
+    tbox:target tbox:CompositeConcept ;
+    tbox:target tbox:LanguageSupportKind ;
+    tbox:target tbox:LanguageSupportAssertion ;
+    tbox:target tbox:LanguageConceptApplicability ;
+    tbox:target tbox:ImplementationMechanismConcept ;
+    tbox:target tbox:supports ;
+    tbox:target tbox:nativelySupports ;
+    tbox:target tbox:standardlySupports ;
+    tbox:target tbox:assertedForConcept ;
+    tbox:target tbox:assertedForLanguage ;
+    tbox:target tbox:hasDominantForm ;
+    tbox:target tbox:hasPrimaryMechanism ;
+    tbox:target tbox:hasApplicability ;
+    tbox:target tbox:hasComponent ;
+    tbox:target tbox:hasPrimaryComponent ;
+    tbox:target tbox:hasSecondaryComponent ;
+    tbox:target tbox:hasSupportKind ;
+    tbox:critique "The schema-level language-concept classes and properties now belong to the shared tbox vocabulary. Concrete language-concept individuals remain in ce and are typed with the corresponding tbox classes."@en ;
+    tbox:suggestion "Keep the targeted class and property declarations in tbox. Use tbox references for schema vocabulary, and use ce references only for concrete concepts and concept qualifiers."@en ;
     tbox:resolveAfter :SupportsNameClashIssue .
 
 :ModuleImportIssue a tbox:IssueEntity ;
@@ -51,6 +51,6 @@
     tbox:target <http://www.softlang.org/ontologies/le> ;
     tbox:target <http://www.softlang.org/ontologies/pe> ;
     tbox:target <http://www.softlang.org/ontologies/te> ;
-    tbox:critique "Ideally, all modules other than tbox and fsl should only import tbox. This is violated for no good reason."@en ;
-    tbox:suggestion "Remove the violating imports from the targeted modules."@en ;
+    tbox:critique "Modules ae, le, pe, and te imported domain modules in addition to tbox. Under the intended module architecture, non-root ABox modules should import only tbox; cross-module references should not require owl:imports."@en ;
+    tbox:suggestion "Remove ae -> pe, le -> ce, pe -> ce, and te -> pe imports. Keep only imports of tbox in these modules, and verify that cross-namespace references resolve through the aggregate fsl ontology."@en ;
     tbox:resolveAfter :LanguageConceptsNamespaceIssue .

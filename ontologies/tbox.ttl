@@ -396,14 +396,14 @@
     rdfs:range :MethodologicalApproach ;
     owl:inverseOf :specifies .
 
-:isSupportedBy a owl:ObjectProperty,
+:isTargetedBy a owl:ObjectProperty,
         :PropertyEntity ;
-    rdfs:label "is supported by"@en ;
-    rdfs:comment "Relates a language entity to a tool entity that supports it"@en ;
+    rdfs:label "is targeted by"@en ;
+    rdfs:comment "Relates a language entity to a tool entity that targets it"@en ;
     foaf:page <https://en.wikipedia.org/wiki/N/A> ;
     rdfs:domain :LanguageEntity ;
     rdfs:range :ToolEntity ;
-    owl:inverseOf :supports .
+    owl:inverseOf :targets .
 
 :isToolOf a owl:ObjectProperty,
         :PropertyEntity ;
@@ -464,14 +464,14 @@
     rdfs:domain :IssueEntity ;
     rdfs:range rdf:langString .
 
-:supports a owl:ObjectProperty,
+:targets a owl:ObjectProperty,
         :PropertyEntity ;
-    rdfs:label "supports"@en ;
-    rdfs:comment "Relates a tool entity to a language entity that it supports"@en ;
+    rdfs:label "targets"@en ;
+    rdfs:comment "Relates a tool entity to a language entity that it targets"@en ;
     foaf:page <https://en.wikipedia.org/wiki/N/A> ;
     rdfs:domain :ToolEntity ;
     rdfs:range :LanguageEntity ;
-    owl:inverseOf :isSupportedBy .
+    owl:inverseOf :isTargetedBy .
 
 :uses a owl:ObjectProperty,
         :PropertyEntity ;
@@ -522,3 +522,103 @@
         "DegueuleEtAl2017SafeModelPolymorphism",
         "RossiniDeLaraGuerraEtAl2014DeepMetamodelling",
         "Favre2005MetaPyramids" .
+
+# Language-concept schema moved from ce.
+
+:LanguageConcept a :ConceptualEntity,
+        owl:Class ;
+    rdfs:label "Language concept"@en ;
+    rdfs:comment "concept associated with a language framework such as programming-language concepts"@en ;
+    rdfs:subClassOf :ConceptualEntity .
+
+:CompositeConcept a :ConceptualEntity,
+        owl:Class ;
+    rdfs:label "Composite concept"@en ;
+    rdfs:subClassOf :LanguageConcept .
+
+:LanguageSupportKind a :ConceptualEntity,
+        owl:Class ;
+    rdfs:label "Language support kind"@en ;
+    rdfs:comment "kind of support that a language provides for a language concept"@en ;
+    rdfs:subClassOf :ConceptualEntity .
+
+:LanguageSupportAssertion a :ConceptualEntity,
+        owl:Class ;
+    rdfs:label "Language support assertion"@en ;
+    rdfs:comment "reified assertion that a language supports a language concept, optionally qualified"@en ;
+    rdfs:subClassOf :Assertion .
+
+:LanguageConceptApplicability a :ConceptualEntity,
+        owl:Class ;
+    rdfs:label "Language concept applicability"@en ;
+    rdfs:comment "qualifier for how directly a language concept applies to a language"@en ;
+    rdfs:subClassOf :ConceptualEntity .
+
+:ImplementationMechanismConcept a :ConceptualEntity,
+        owl:Class ;
+    rdfs:subClassOf :LanguageConcept .
+
+:supports a owl:ObjectProperty ;
+    rdfs:label "Supports"@en ;
+    rdfs:domain :LanguageEntity ;
+    rdfs:range :LanguageConcept .
+
+:nativelySupports a owl:ObjectProperty ;
+    rdfs:label "Natively supports"@en ;
+    rdfs:domain :LanguageEntity ;
+    rdfs:range :LanguageConcept ;
+    rdfs:subPropertyOf :supports .
+
+:standardlySupports a owl:ObjectProperty ;
+    rdfs:label "Standardly supports"@en ;
+    rdfs:domain :LanguageEntity ;
+    rdfs:range :LanguageConcept ;
+    rdfs:subPropertyOf :supports .
+
+:assertedForConcept a owl:ObjectProperty ;
+    rdfs:label "Asserted for concept"@en ;
+    rdfs:domain :LanguageSupportAssertion ;
+    rdfs:range :LanguageConcept .
+
+:assertedForLanguage a owl:ObjectProperty ;
+    rdfs:label "Asserted for language"@en ;
+    rdfs:domain :LanguageSupportAssertion ;
+    rdfs:range :LanguageEntity .
+
+:hasDominantForm a owl:ObjectProperty ;
+    rdfs:label "Has dominant form"@en ;
+    rdfs:domain :LanguageSupportAssertion ;
+    rdfs:range :LanguageConcept .
+
+:hasPrimaryMechanism a owl:ObjectProperty ;
+    rdfs:label "Has primary mechanism"@en ;
+    rdfs:domain :LanguageSupportAssertion ;
+    rdfs:range :ImplementationMechanismConcept .
+
+:hasApplicability a owl:ObjectProperty ;
+    rdfs:label "Has applicability"@en ;
+    rdfs:domain :LanguageSupportAssertion ;
+    rdfs:range :LanguageConceptApplicability .
+
+:hasComponent a owl:ObjectProperty ;
+    rdfs:label "Has component"@en ;
+    rdfs:domain :CompositeConcept ;
+    rdfs:range :LanguageConcept .
+
+:hasPrimaryComponent a owl:ObjectProperty ;
+    rdfs:label "Has primary component"@en ;
+    rdfs:domain :CompositeConcept ;
+    rdfs:range :LanguageConcept ;
+    rdfs:subPropertyOf :hasComponent .
+
+:hasSecondaryComponent a owl:ObjectProperty ;
+    rdfs:label "Has secondary component"@en ;
+    rdfs:domain :CompositeConcept ;
+    rdfs:range :LanguageConcept ;
+    rdfs:subPropertyOf :hasComponent .
+
+:hasSupportKind a owl:ObjectProperty ;
+    rdfs:label "Has support kind"@en ;
+    rdfs:domain :LanguageSupportAssertion ;
+    rdfs:range :LanguageSupportKind .
+

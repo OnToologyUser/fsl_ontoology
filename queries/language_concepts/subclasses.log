@@ -1,7 +1,6 @@
 http://www.softlang.org/ontologies/ce#AbstractionConcept
 http://www.softlang.org/ontologies/ce#BindingConcept
 http://www.softlang.org/ontologies/ce#CodeGenerationConcept
-http://www.softlang.org/ontologies/ce#CompositeConcept
 http://www.softlang.org/ontologies/ce#ConcurrencyConcept
 http://www.softlang.org/ontologies/ce#ConstraintConcept
 http://www.softlang.org/ontologies/ce#ControlConcept
@@ -11,7 +10,6 @@ http://www.softlang.org/ontologies/ce#ErrorHandlingConcept
 http://www.softlang.org/ontologies/ce#EvaluationStrategyConcept
 http://www.softlang.org/ontologies/ce#GrammarConcept
 http://www.softlang.org/ontologies/ce#HigherOrderConcept
-http://www.softlang.org/ontologies/ce#ImplementationMechanismConcept
 http://www.softlang.org/ontologies/ce#KnowledgeRepresentationConcept
 http://www.softlang.org/ontologies/ce#LifetimeConcept
 http://www.softlang.org/ontologies/ce#MetaprogrammingConcept
@@ -29,3 +27,5 @@ http://www.softlang.org/ontologies/ce#StateConcept
 http://www.softlang.org/ontologies/ce#StructuredComputationConcept
 http://www.softlang.org/ontologies/ce#TransformationConcept
 http://www.softlang.org/ontologies/ce#TypeConcept
+http://www.softlang.org/ontologies/tbox#CompositeConcept
+http://www.softlang.org/ontologies/tbox#ImplementationMechanismConcept

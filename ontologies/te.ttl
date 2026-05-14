@@ -14,8 +14,7 @@
     tbox:linkingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
     tbox:metamodelingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
     rdfs:comment "Sub-ontology / ABox for software tools"@en ;
-    owl:imports <http://www.softlang.org/ontologies/pe>,
-        <http://www.softlang.org/ontologies/tbox> .
+    owl:imports <http://www.softlang.org/ontologies/tbox> .
 
 :APIWorkbench a tbox:ToolEntity ;
     rdfs:label "API workbench"@en ;
@@ -23,14 +22,14 @@
     tbox:hasInputArtifact ae:APIDescriptionArtifact ;
     tbox:hasOutputArtifact ae:APIDescriptionArtifact ;
     tbox:processes ae:APIDescriptionArtifact ;
-    tbox:supports le:InterfaceDescriptionLanguage ;
+    tbox:targets le:InterfaceDescriptionLanguage ;
     rdfs:subClassOf tbox:SoftwareTool .
 
 :BuildTool a tbox:ToolEntity ;
     rdfs:label "Build tool"@en ;
     tbox:hasInputArtifact ae:BuildScriptArtifact,
         ae:ConfigurationArtifact ;
-    tbox:supports le:BuildScriptingLanguage,
+    tbox:targets le:BuildScriptingLanguage,
         le:ConfigurationLanguage ;
     rdfs:subClassOf tbox:SoftwareTool ;
     foaf:page <https://en.wikipedia.org/wiki/Build_automation> .
@@ -40,7 +39,7 @@
     tbox:hasInputArtifact ae:ProgramArtifact ;
     tbox:hasOutputArtifact ae:ProgramArtifact ;
     tbox:processes ae:ProgramArtifact ;
-    tbox:supports pe:ProgrammingLanguage ;
+    tbox:targets pe:ProgrammingLanguage ;
     rdfs:subClassOf tbox:SoftwareTool .
 
 :ConfigurationTool a tbox:ToolEntity ;
@@ -48,7 +47,7 @@
     tbox:hasAffectedArtifact ae:ConfigurationArtifact ;
     tbox:hasInputArtifact ae:ConfigurationArtifact ;
     tbox:hasOutputArtifact ae:ConfigurationArtifact ;
-    tbox:supports le:ConfigurationLanguage ;
+    tbox:targets le:ConfigurationLanguage ;
     rdfs:subClassOf tbox:SoftwareTool ;
     foaf:page <https://en.wikipedia.org/wiki/Configuration_management> .
 
@@ -61,13 +60,13 @@
 :GrammarAnalyzer a tbox:ToolEntity ;
     rdfs:label "Grammar analyzer"@en ;
     tbox:processes ae:GrammarArtifact ;
-    tbox:supports le:GrammarMetalanguage ;
+    tbox:targets le:GrammarMetalanguage ;
     rdfs:subClassOf tbox:SoftwareTool .
 
 :GrammarTransformationEngine a tbox:ToolEntity ;
     rdfs:label "Grammar transformation engine"@en ;
     tbox:processes ae:GrammarArtifact ;
-    tbox:supports le:GrammarTransformationLanguage ;
+    tbox:targets le:GrammarTransformationLanguage ;
     rdfs:subClassOf :TransformationEngine .
 
 :GraphDatabase a tbox:ToolEntity ;
@@ -82,7 +81,7 @@
     tbox:hasSpace ce:Graphware ;
     tbox:processes ae:GraphQueryArtifact,
         ae:PropertyGraphArtifact ;
-    tbox:supports le:GraphQueryLanguage,
+    tbox:targets le:GraphQueryLanguage,
         le:PropertyGraphDataModelLanguage ;
     rdfs:subClassOf :GraphDatabase,
         :QueryProcessor .
@@ -91,14 +90,14 @@
     rdfs:label "Interpreter"@en ;
     tbox:hasInputArtifact ae:ProgramArtifact ;
     tbox:processes ae:ProgramArtifact ;
-    tbox:supports pe:ProgrammingLanguage ;
+    tbox:targets pe:ProgrammingLanguage ;
     rdfs:subClassOf tbox:SoftwareTool .
 
 :JSONProcessor a tbox:ToolEntity ;
     rdfs:label "JSON processor"@en ;
     tbox:processes ae:JSONDocumentArtifact,
         ae:JSONSchemaArtifact ;
-    tbox:supports le:JSON,
+    tbox:targets le:JSON,
         le:JSONQueryLanguage,
         le:JSONSchemaLanguage ;
     rdfs:subClassOf tbox:SoftwareTool .
@@ -106,21 +105,21 @@
 :LogicProgrammingSystem a tbox:ToolEntity ;
     rdfs:label "Logic programming system"@en ;
     tbox:processes ae:LogicProgramArtifact ;
-    tbox:supports pe:Datalog,
+    tbox:targets pe:Datalog,
         pe:Prolog ;
     rdfs:subClassOf tbox:SoftwareTool .
 
 :MarkupProcessor a tbox:ToolEntity ;
     rdfs:label "Markup processor"@en ;
     tbox:processes ae:MarkupArtifact ;
-    tbox:supports le:MarkupLanguage ;
+    tbox:targets le:MarkupLanguage ;
     rdfs:subClassOf tbox:SoftwareTool .
 
 :ModelingWorkbench a tbox:ToolEntity ;
     rdfs:label "Modeling workbench"@en ;
     tbox:processes ae:MetamodelArtifact,
         ae:ModelArtifact ;
-    tbox:supports le:MetamodelingLanguage,
+    tbox:targets le:MetamodelingLanguage,
         le:ModelingLanguage ;
     rdfs:subClassOf tbox:SoftwareTool .
 
@@ -131,25 +130,25 @@
     tbox:hasOutputArtifact ae:ModelArtifact ;
     tbox:processes ae:MetamodelArtifact,
         ae:ModelArtifact ;
-    tbox:supports le:ModelTransformationLanguage ;
+    tbox:targets le:ModelTransformationLanguage ;
     rdfs:subClassOf :TransformationEngine .
 
 :ModelValidator a tbox:ToolEntity ;
     rdfs:label "Model validator"@en ;
     tbox:processes ae:ModelArtifact ;
-    tbox:supports le:ConstraintLanguage ;
+    tbox:targets le:ConstraintLanguage ;
     rdfs:subClassOf :Validator .
 
 :OntologyEditor a tbox:ToolEntity ;
     rdfs:label "Ontology editor"@en ;
     tbox:processes ae:OntologyArtifact ;
-    tbox:supports le:OntologyLanguage ;
+    tbox:targets le:OntologyLanguage ;
     rdfs:subClassOf tbox:SoftwareTool .
 
 :ParserGenerator a tbox:ToolEntity ;
     rdfs:label "Parser generator"@en ;
     tbox:processes ae:GrammarArtifact ;
-    tbox:supports le:GrammarMetalanguage ;
+    tbox:targets le:GrammarMetalanguage ;
     rdfs:subClassOf tbox:SoftwareTool .
 
 :ProofAssistant a tbox:ToolEntity ;
@@ -158,7 +157,7 @@
     tbox:hasInputArtifact ae:ProofArtifact ;
     tbox:hasOutputArtifact ae:ProofArtifact ;
     tbox:processes ae:ProofArtifact ;
-    tbox:supports le:ProofLanguage ;
+    tbox:targets le:ProofLanguage ;
     rdfs:subClassOf tbox:SoftwareTool .
 
 :QueryProcessor a tbox:ToolEntity ;
@@ -169,7 +168,7 @@
     rdfs:label "Reasoner"@en ;
     tbox:processes ae:OntologyArtifact,
         ae:RDFGraphArtifact ;
-    tbox:supports le:OntologyLanguage,
+    tbox:targets le:OntologyLanguage,
         le:SemanticDataModelLanguage ;
     rdfs:subClassOf tbox:SoftwareTool,
         :SemanticReasoner .
@@ -177,7 +176,7 @@
 :RefactoringTool a tbox:ToolEntity ;
     rdfs:label "Refactoring tool"@en ;
     tbox:hasAffectedArtifact ae:ProgramArtifact ;
-    tbox:supports pe:ProgrammingLanguage ;
+    tbox:targets pe:ProgrammingLanguage ;
     rdfs:subClassOf tbox:SoftwareTool ;
     foaf:page <https://en.wikipedia.org/wiki/Code_refactoring> .
 
@@ -186,7 +185,7 @@
     tbox:processes ae:RelationalDataArtifact,
         ae:RelationalQueryArtifact,
         ae:RelationalSchemaArtifact ;
-    tbox:supports le:SQL,
+    tbox:targets le:SQL,
         le:SQLDDL,
         le:SQLDML,
         le:SQLQuery ;
@@ -198,7 +197,7 @@
     tbox:hasAffectedArtifact ae:RequirementsArtifact ;
     tbox:hasInputArtifact ae:RequirementsArtifact ;
     tbox:hasOutputArtifact ae:RequirementsArtifact ;
-    tbox:supports le:RequirementsSpecificationLanguage ;
+    tbox:targets le:RequirementsSpecificationLanguage ;
     rdfs:subClassOf tbox:SoftwareTool ;
     foaf:page <https://en.wikipedia.org/wiki/Requirements_engineering> .
 
@@ -206,7 +205,7 @@
     rdfs:label "Rule engine"@en ;
     tbox:hasSpace ce:Ruleware ;
     tbox:processes ae:RuleArtifact ;
-    tbox:supports le:RuleLanguage ;
+    tbox:targets le:RuleLanguage ;
     rdfs:subClassOf tbox:SoftwareTool ;
     foaf:page <https://en.wikipedia.org/?title=Rule_engine&redirect=no> .
 
@@ -222,7 +221,7 @@
     rdfs:label "Static analyzer"@en ;
     tbox:hasInputArtifact ae:ProgramArtifact ;
     tbox:processes ae:ProgramArtifact ;
-    tbox:supports pe:ProgrammingLanguage ;
+    tbox:targets pe:ProgrammingLanguage ;
     rdfs:subClassOf tbox:SoftwareTool .
 
 :TransformationEngine a tbox:ToolEntity ;
@@ -232,7 +231,7 @@
 :TripleStore a tbox:ToolEntity ;
     rdfs:label "Triple store"@en ;
     tbox:processes ae:RDFGraphArtifact ;
-    tbox:supports le:RDF,
+    tbox:targets le:RDF,
         le:SPARQL ;
     rdfs:subClassOf :QueryProcessor .
 
@@ -244,7 +243,7 @@
     rdfs:label "XML processor"@en ;
     tbox:processes ae:XMLDocumentArtifact,
         ae:XMLSchemaArtifact ;
-    tbox:supports le:DocumentTransformationLanguage,
+    tbox:targets le:DocumentTransformationLanguage,
         le:XML,
         le:XMLQueryLanguage,
         le:XMLSchemaLanguage ;

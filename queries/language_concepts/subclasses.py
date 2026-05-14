@@ -12,12 +12,11 @@ for ttl in ttl_files:
 query = """
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX tbox: <http://www.softlang.org/ontologies/tbox#>
-PREFIX ce: <http://www.softlang.org/ontologies/ce#>
 
 SELECT
   DISTINCT ?sc
 WHERE {
-  ?sc rdfs:subClassOf+ ce:LanguageConcept .
+  ?sc rdfs:subClassOf+ tbox:LanguageConcept .
 }
 ORDER BY ?sc
 """

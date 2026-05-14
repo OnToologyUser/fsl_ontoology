@@ -21,8 +21,7 @@ Borderline cases may be documented using skos:note.
 Paradigm-based subclassing of programming languages is not used; paradigms are represented via concept support.
 """@en ;
     rdfs:comment "Sub-ontology / ABox for programming-language concepts and programming languages"@en ;
-    owl:imports <http://www.softlang.org/ontologies/ce>,
-        <http://www.softlang.org/ontologies/tbox> .
+    owl:imports <http://www.softlang.org/ontologies/tbox> .
 
 :ProgrammingLanguage a tbox:LanguageEntity,
         owl:Class ;
@@ -42,7 +41,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "Ada"@en ;
-    ce:nativelySupports ce:DataAbstraction,
+    tbox:nativelySupports ce:DataAbstraction,
         ce:Exceptions,
         ce:ImperativeParadigm,
         ce:ProceduralAbstraction,
@@ -62,7 +61,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "Assembly language"@en ;
-    ce:nativelySupports ce:Branching,
+    tbox:nativelySupports ce:Branching,
         ce:ImperativeParadigm,
         ce:Iteration,
         ce:Sequencing ;
@@ -78,7 +77,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "C"@en ;
-    ce:nativelySupports ce:Branching,
+    tbox:nativelySupports ce:Branching,
         ce:ImperativeParadigm,
         ce:Iteration,
         ce:MutableData,
@@ -102,7 +101,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "C#"@en ;
-    ce:nativelySupports ce:Closures,
+    tbox:nativelySupports ce:Closures,
         ce:DataAbstraction,
         ce:Encapsulation,
         ce:Exceptions,
@@ -115,7 +114,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         ce:StaticTyping,
         ce:Subtyping,
         ce:TypeInference ;
-    ce:standardlySupports ce:FuturesAndPromises ;
+    tbox:standardlySupports ce:FuturesAndPromises ;
     tbox:hasArea ce:PLT,
         ce:SE,
         ce:SLE ;
@@ -128,7 +127,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "COBOL"@en ;
-    ce:nativelySupports ce:Branching,
+    tbox:nativelySupports ce:Branching,
         ce:Exceptions,
         ce:ImperativeParadigm,
         ce:Iteration,
@@ -148,7 +147,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "C++"@en ;
-    ce:nativelySupports ce:Closures,
+    tbox:nativelySupports ce:Closures,
         ce:DataAbstraction,
         ce:Encapsulation,
         ce:FirstClassFunctions,
@@ -174,7 +173,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "Datalog"@en ;
-    ce:nativelySupports ce:DeclarativeParadigm,
+    tbox:nativelySupports ce:DeclarativeParadigm,
         ce:LogicParadigm ;
     tbox:hasArea ce:KR,
         ce:SE,
@@ -188,7 +187,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "Delphi/Object Pascal"@en ;
-    ce:nativelySupports ce:Branching,
+    tbox:nativelySupports ce:Branching,
         ce:DataAbstraction,
         ce:Encapsulation,
         ce:Enums,
@@ -214,7 +213,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "F#"@en ;
-    ce:nativelySupports ce:Abstraction,
+    tbox:nativelySupports ce:Abstraction,
         ce:AdHocPolymorphism,
         ce:AlgebraicDataTypes,
         ce:AsyncEventDrivenConcurrency,
@@ -295,7 +294,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         ce:ValueSemantics,
         ce:VariablesAsState,
         ce:Variants ;
-    ce:standardlySupports ce:FuturesAndPromises ;
+    tbox:standardlySupports ce:FuturesAndPromises ;
     tbox:hasArea ce:PLT,
         ce:SE,
         ce:SLE ;
@@ -304,25 +303,25 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
     foaf:isPrimaryTopicOf <https://dbpedia.org/resource/F_Sharp_(programming_language)> ;
     foaf:page <https://en.wikipedia.org/wiki/F_Sharp_(programming_language)> .
 
-:F_Sharp_PipelineStyle_assertion a ce:LanguageSupportAssertion ;
-    ce:assertedForConcept ce:PipelineStyle ;
-    ce:assertedForLanguage :F_Sharp ;
-    ce:hasDominantForm ce:PipelineStyle ;
-    ce:hasPrimaryMechanism ce:PipelineOperatorMechanism ;
-    ce:hasSupportKind ce:NativeSupport .
+:F_Sharp_PipelineStyle_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:PipelineStyle ;
+    tbox:assertedForLanguage :F_Sharp ;
+    tbox:hasDominantForm ce:PipelineStyle ;
+    tbox:hasPrimaryMechanism ce:PipelineOperatorMechanism ;
+    tbox:hasSupportKind ce:NativeSupport .
 
-:F_Sharp_StructuredComputationAbstractions_assertion a ce:LanguageSupportAssertion ;
-    ce:assertedForConcept ce:StructuredComputationAbstractions ;
-    ce:assertedForLanguage :F_Sharp ;
-    ce:hasDominantForm ce:MonadicStyle ;
-    ce:hasPrimaryMechanism ce:ComputationExpressionMechanism ;
-    ce:hasSupportKind ce:NativeSupport .
+:F_Sharp_StructuredComputationAbstractions_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:StructuredComputationAbstractions ;
+    tbox:assertedForLanguage :F_Sharp ;
+    tbox:hasDominantForm ce:MonadicStyle ;
+    tbox:hasPrimaryMechanism ce:ComputationExpressionMechanism ;
+    tbox:hasSupportKind ce:NativeSupport .
 
 :Fortran a :ProgrammingLanguage,
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "Fortran"@en ;
-    ce:nativelySupports ce:Branching,
+    tbox:nativelySupports ce:Branching,
         ce:DataParallelism,
         ce:ImperativeParadigm,
         ce:Iteration,
@@ -342,7 +341,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "Go"@en ;
-    ce:nativelySupports ce:ImperativeParadigm,
+    tbox:nativelySupports ce:ImperativeParadigm,
         ce:MessagePassingConcurrency,
         ce:ProceduralAbstraction,
         ce:SharedMemoryConcurrency,
@@ -360,7 +359,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "Haskell"@en ;
-    ce:nativelySupports ce:Abstraction,
+    tbox:nativelySupports ce:Abstraction,
         ce:AdHocPolymorphism,
         ce:AlgebraicDataTypes,
         ce:Binding,
@@ -432,25 +431,25 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
     foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Haskell_(programming_language)> ;
     foaf:page <https://en.wikipedia.org/wiki/Haskell> .
 
-:Haskell_EvaluationStrategy_assertion a ce:LanguageSupportAssertion ;
-    ce:assertedForConcept ce:EvaluationStrategy ;
-    ce:assertedForLanguage :Haskell ;
-    ce:hasDominantForm ce:LazyEvaluation ;
-    ce:hasSupportKind ce:NativeSupport .
+:Haskell_EvaluationStrategy_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:EvaluationStrategy ;
+    tbox:assertedForLanguage :Haskell ;
+    tbox:hasDominantForm ce:LazyEvaluation ;
+    tbox:hasSupportKind ce:NativeSupport .
 
-:Haskell_StructuredComputationAbstractions_assertion a ce:LanguageSupportAssertion ;
-    ce:assertedForConcept ce:StructuredComputationAbstractions ;
-    ce:assertedForLanguage :Haskell ;
-    ce:hasDominantForm ce:MonadicStyle ;
-    ce:hasPrimaryMechanism ce:TypeClassBasedMechanism ;
-    ce:hasSupportKind ce:NativeSupport ;
+:Haskell_StructuredComputationAbstractions_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:StructuredComputationAbstractions ;
+    tbox:assertedForLanguage :Haskell ;
+    tbox:hasDominantForm ce:MonadicStyle ;
+    tbox:hasPrimaryMechanism ce:TypeClassBasedMechanism ;
+    tbox:hasSupportKind ce:NativeSupport ;
     skos:note "Representative native support centers on type classes and monadic style."@en .
 
 :Java a :ProgrammingLanguage,
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "Java"@en ;
-    ce:nativelySupports ce:AdHocPolymorphism,
+    tbox:nativelySupports ce:AdHocPolymorphism,
         ce:Branching,
         ce:Closures,
         ce:DataAbstraction,
@@ -465,7 +464,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         ce:Sequencing,
         ce:StaticTyping,
         ce:Subtyping ;
-    ce:standardlySupports ce:FuturesAndPromises ;
+    tbox:standardlySupports ce:FuturesAndPromises ;
     tbox:hasArea ce:PLT,
         ce:SE,
         ce:SLE ;
@@ -474,32 +473,32 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
     foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Java_(programming_language)> ;
     foaf:page <https://en.wikipedia.org/wiki/Java_(programming_language)> .
 
-:Java_ErrorHandling_assertion a ce:LanguageSupportAssertion ;
-    ce:assertedForConcept ce:ErrorHandling ;
-    ce:assertedForLanguage :Java ;
-    ce:hasDominantForm ce:Exceptions ;
-    ce:hasPrimaryMechanism ce:ExceptionMechanism ;
-    ce:hasSupportKind ce:NativeSupport .
+:Java_ErrorHandling_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:ErrorHandling ;
+    tbox:assertedForLanguage :Java ;
+    tbox:hasDominantForm ce:Exceptions ;
+    tbox:hasPrimaryMechanism ce:ExceptionMechanism ;
+    tbox:hasSupportKind ce:NativeSupport .
 
-:Java_FuturesAndPromises_assertion a ce:LanguageSupportAssertion ;
-    ce:assertedForConcept ce:FuturesAndPromises ;
-    ce:assertedForLanguage :Java ;
-    ce:hasDominantForm ce:AsyncEventDrivenConcurrency ;
-    ce:hasPrimaryMechanism ce:TaskLibraryMechanism ;
-    ce:hasSupportKind ce:StandardLibrarySupport .
+:Java_FuturesAndPromises_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:FuturesAndPromises ;
+    tbox:assertedForLanguage :Java ;
+    tbox:hasDominantForm ce:AsyncEventDrivenConcurrency ;
+    tbox:hasPrimaryMechanism ce:TaskLibraryMechanism ;
+    tbox:hasSupportKind ce:StandardLibrarySupport .
 
-:Java_Objects_assertion a ce:LanguageSupportAssertion ;
-    ce:assertedForConcept ce:Objects ;
-    ce:assertedForLanguage :Java ;
-    ce:hasDominantForm ce:ObjectOrientedParadigm ;
-    ce:hasPrimaryMechanism ce:ClassBasedMechanism ;
-    ce:hasSupportKind ce:NativeSupport .
+:Java_Objects_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:Objects ;
+    tbox:assertedForLanguage :Java ;
+    tbox:hasDominantForm ce:ObjectOrientedParadigm ;
+    tbox:hasPrimaryMechanism ce:ClassBasedMechanism ;
+    tbox:hasSupportKind ce:NativeSupport .
 
 :JavaScript a :ProgrammingLanguage,
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "JavaScript"@en ;
-    ce:nativelySupports ce:Branching,
+    tbox:nativelySupports ce:Branching,
         ce:Closures,
         ce:DynamicTyping,
         ce:FirstClassFunctions,
@@ -521,7 +520,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "Koka"@en ;
-    ce:nativelySupports ce:EffectHandlerStyle,
+    tbox:nativelySupports ce:EffectHandlerStyle,
         ce:FirstClassFunctions,
         ce:FunctionalParadigm,
         ce:HigherOrderFunctions,
@@ -535,19 +534,19 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
     rdfs:comment "research-oriented language emphasizing effects and effect handlers"@en ;
     foaf:page <https://koka-lang.github.io/koka/doc/index.html> .
 
-:Koka_EffectHandlerStyle_assertion a ce:LanguageSupportAssertion ;
-    ce:assertedForConcept ce:EffectHandlerStyle ;
-    ce:assertedForLanguage :Koka ;
-    ce:hasDominantForm ce:EffectHandlerStyle ;
-    ce:hasPrimaryMechanism ce:EffectHandlerMechanism ;
-    ce:hasSupportKind ce:NativeSupport ;
+:Koka_EffectHandlerStyle_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:EffectHandlerStyle ;
+    tbox:assertedForLanguage :Koka ;
+    tbox:hasDominantForm ce:EffectHandlerStyle ;
+    tbox:hasPrimaryMechanism ce:EffectHandlerMechanism ;
+    tbox:hasSupportKind ce:NativeSupport ;
     skos:note "Representative exercise language for effect-handler style."@en .
 
 :MATLAB a :ProgrammingLanguage,
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "MATLAB"@en ;
-    ce:nativelySupports ce:DataParallelism,
+    tbox:nativelySupports ce:DataParallelism,
         ce:DynamicTyping,
         ce:ImperativeParadigm,
         ce:ProceduralAbstraction ;
@@ -563,7 +562,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "Pascal"@en ;
-    ce:nativelySupports ce:Branching,
+    tbox:nativelySupports ce:Branching,
         ce:DataAbstraction,
         ce:Enums,
         ce:Exceptions,
@@ -588,7 +587,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "Perl"@en ;
-    ce:nativelySupports ce:CodeGenerationConcept,
+    tbox:nativelySupports ce:CodeGenerationConcept,
         ce:DynamicTyping,
         ce:Exceptions,
         ce:ImperativeParadigm,
@@ -606,7 +605,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "PHP"@en ;
-    ce:nativelySupports ce:DynamicTyping,
+    tbox:nativelySupports ce:DynamicTyping,
         ce:Encapsulation,
         ce:Exceptions,
         ce:ImperativeParadigm,
@@ -625,7 +624,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "Prolog"@en ;
-    ce:nativelySupports ce:Backtracking,
+    tbox:nativelySupports ce:Backtracking,
         ce:DeclarativeParadigm,
         ce:Lists,
         ce:LogicParadigm,
@@ -639,26 +638,26 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
     foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Prolog> ;
     foaf:page <https://en.wikipedia.org/wiki/Prolog> .
 
-:Prolog_ComputationalParadigmsAndEvaluationModels_assertion a ce:LanguageSupportAssertion ;
-    ce:assertedForConcept ce:ComputationalParadigmsAndEvaluationModels ;
-    ce:assertedForLanguage :Prolog ;
-    ce:hasDominantForm ce:LogicParadigm ;
-    ce:hasPrimaryMechanism ce:RuleAndPredicateMechanism ;
-    ce:hasSupportKind ce:NativeSupport ;
+:Prolog_ComputationalParadigmsAndEvaluationModels_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:ComputationalParadigmsAndEvaluationModels ;
+    tbox:assertedForLanguage :Prolog ;
+    tbox:hasDominantForm ce:LogicParadigm ;
+    tbox:hasPrimaryMechanism ce:RuleAndPredicateMechanism ;
+    tbox:hasSupportKind ce:NativeSupport ;
     skos:note "Representative support centers on logic programming and rule/predicate execution."@en .
 
-:Prolog_ControlFlow_assertion a ce:LanguageSupportAssertion ;
-    ce:assertedForConcept ce:ControlFlow ;
-    ce:assertedForLanguage :Prolog ;
-    ce:hasDominantForm ce:Backtracking ;
-    ce:hasPrimaryMechanism ce:BacktrackingMechanism ;
-    ce:hasSupportKind ce:NativeSupport .
+:Prolog_ControlFlow_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:ControlFlow ;
+    tbox:assertedForLanguage :Prolog ;
+    tbox:hasDominantForm ce:Backtracking ;
+    tbox:hasPrimaryMechanism ce:BacktrackingMechanism ;
+    tbox:hasSupportKind ce:NativeSupport .
 
 :Python a :ProgrammingLanguage,
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "Python"@en ;
-    ce:nativelySupports ce:Branching,
+    tbox:nativelySupports ce:Branching,
         ce:Closures,
         ce:Coroutines,
         ce:DataAbstraction,
@@ -687,25 +686,25 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
     foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Python_(programming_language)> ;
     foaf:page <https://en.wikipedia.org/wiki/Python_(programming_language)> .
 
-:Python_IteratorsAndGenerators_assertion a ce:LanguageSupportAssertion ;
-    ce:assertedForConcept ce:IteratorsAndGenerators ;
-    ce:assertedForLanguage :Python ;
-    ce:hasDominantForm ce:Coroutines ;
-    ce:hasPrimaryMechanism ce:GeneratorProtocolMechanism ;
-    ce:hasSupportKind ce:NativeSupport .
+:Python_IteratorsAndGenerators_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:IteratorsAndGenerators ;
+    tbox:assertedForLanguage :Python ;
+    tbox:hasDominantForm ce:Coroutines ;
+    tbox:hasPrimaryMechanism ce:GeneratorProtocolMechanism ;
+    tbox:hasSupportKind ce:NativeSupport .
 
-:Python_Objects_assertion a ce:LanguageSupportAssertion ;
-    ce:assertedForConcept ce:Objects ;
-    ce:assertedForLanguage :Python ;
-    ce:hasDominantForm ce:ObjectOrientedParadigm ;
-    ce:hasPrimaryMechanism ce:ClassBasedMechanism ;
-    ce:hasSupportKind ce:NativeSupport .
+:Python_Objects_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:Objects ;
+    tbox:assertedForLanguage :Python ;
+    tbox:hasDominantForm ce:ObjectOrientedParadigm ;
+    tbox:hasPrimaryMechanism ce:ClassBasedMechanism ;
+    tbox:hasSupportKind ce:NativeSupport .
 
 :R a :ProgrammingLanguage,
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "R"@en ;
-    ce:nativelySupports ce:DynamicTyping,
+    tbox:nativelySupports ce:DynamicTyping,
         ce:FirstClassFunctions,
         ce:FunctionalParadigm,
         ce:HigherOrderFunctions,
@@ -722,7 +721,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "Rust"@en ;
-    ce:nativelySupports ce:AlgebraicDataTypes,
+    tbox:nativelySupports ce:AlgebraicDataTypes,
         ce:Branching,
         ce:DataAbstraction,
         ce:FunctionAbstraction,
@@ -753,7 +752,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "Scheme"@en ;
-    ce:nativelySupports ce:Closures,
+    tbox:nativelySupports ce:Closures,
         ce:ContinuationPassingStyle,
         ce:Continuations,
         ce:DynamicTyping,
@@ -768,19 +767,19 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
     foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Scheme_(programming_language)> ;
     foaf:page <https://en.wikipedia.org/wiki/Scheme_(programming_language)> .
 
-:Scheme_ContinuationPassingStyle_assertion a ce:LanguageSupportAssertion ;
-    ce:assertedForConcept ce:ContinuationPassingStyle ;
-    ce:assertedForLanguage :Scheme ;
-    ce:hasDominantForm ce:ContinuationPassingStyle ;
-    ce:hasPrimaryMechanism ce:ContinuationOperatorMechanism ;
-    ce:hasSupportKind ce:NativeSupport ;
+:Scheme_ContinuationPassingStyle_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:ContinuationPassingStyle ;
+    tbox:assertedForLanguage :Scheme ;
+    tbox:hasDominantForm ce:ContinuationPassingStyle ;
+    tbox:hasPrimaryMechanism ce:ContinuationOperatorMechanism ;
+    tbox:hasSupportKind ce:NativeSupport ;
     skos:note "Representative exercise language for continuation-passing style."@en .
 
 :Scratch a :ProgrammingLanguage,
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "Scratch"@en ;
-    ce:nativelySupports ce:Branching,
+    tbox:nativelySupports ce:Branching,
         ce:ImperativeParadigm,
         ce:Iteration,
         ce:ProceduralAbstraction,
@@ -797,7 +796,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "Swift"@en ;
-    ce:nativelySupports ce:Closures,
+    tbox:nativelySupports ce:Closures,
         ce:DataAbstraction,
         ce:Encapsulation,
         ce:FirstClassFunctions,
@@ -822,7 +821,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         tbox:LanguageEntity,
         owl:NamedIndividual ;
     rdfs:label "Visual Basic"@en ;
-    ce:nativelySupports ce:Branching,
+    tbox:nativelySupports ce:Branching,
         ce:Exceptions,
         ce:ImperativeParadigm,
         ce:Iteration,
