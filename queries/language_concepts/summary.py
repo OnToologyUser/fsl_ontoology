@@ -3,14 +3,14 @@ import csv
 
 log_dir = "."
 log_files = [
+    "concepts",
     "instances",
-    "used_instances",
-    "unused_instances",
-    "instance_properties",
     "subclasses",
+    "used_instances",
     "used_subclasses",
-    "unused_subclasses",
-    "subclass_properties"
+    "properties",
+    "software_languages",
+    "programming_languages"
     ]
 
 with open("summary.csv", "w", newline="", encoding="utf-8") as out:

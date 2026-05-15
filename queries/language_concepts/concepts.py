@@ -12,31 +12,23 @@ for ttl in ttl_files:
 query = """
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX tbox: <http://www.softlang.org/ontologies/tbox#>
 
-SELECT DISTINCT ?i
+SELECT
+  ?c
 WHERE {
-  ?sc rdfs:subClassOf+ tbox:LanguageConcept .
-  ?i rdf:type ?sc .
-  FILTER NOT EXISTS {
-    {
-      ?i ?p ?o .
-      FILTER(?p != rdf:type)
-      FILTER(?p != rdfs:label)
-      FILTER(?p != rdfs:comment)
-      FILTER(?p != foaf:isPrimaryTopicOf)
-      FILTER(?p != foaf:page)
-    }
-    UNION
-    {
-      ?s ?p ?i .
-    }
+  {
+    ?sc rdfs:subClassOf+ tbox:LanguageConcept .
+    ?c rdf:type ?sc .
+  }
+  UNION
+  {
+    ?c rdfs:subClassOf+ tbox:LanguageConcept .
   }
 }
-ORDER BY ?i
+ORDER BY ?c
 """
 
 # Reporting query result
 for row in g.query(query):
-    print(row['i'])
+    print(row['c'])

@@ -17,20 +17,29 @@ PREFIX tbox: <http://www.softlang.org/ontologies/tbox#>
 
 SELECT DISTINCT ?p
 WHERE {
-  ?sc rdfs:subClassOf+ tbox:LanguageConcept .
-  ?i rdf:type ?sc .
   {
-    ?i ?p ?o .
-    FILTER(?p != rdf:type)
-    FILTER(?p != rdfs:label)
-    FILTER(?p != rdfs:comment)
-    FILTER(?p != foaf:isPrimaryTopicOf)
-    FILTER(?p != foaf:page)
+    ?sc rdfs:subClassOf+ tbox:LanguageConcept .
+    ?c rdf:type ?sc .
   }
   UNION
   {
-    ?s ?p ?i .
+    ?c rdfs:subClassOf+ tbox:LanguageConcept .
   }
+  {
+    ?c ?p ?o
+  }
+  UNION
+  {
+    ?s ?p ?c
+  }
+  FILTER(?p != rdf:type) 
+  FILTER(?p != rdfs:subClassOf)
+  FILTER(?p != rdfs:domain)
+  FILTER(?p != rdfs:range)
+  FILTER(?p != rdfs:label)
+  FILTER(?p != rdfs:comment)
+  FILTER(?p != foaf:isPrimaryTopicOf)
+  FILTER(?p != foaf:page)
 }
 ORDER BY ?p
 """

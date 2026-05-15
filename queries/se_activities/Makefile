@@ -3,8 +3,12 @@ all:
 	make immediate_subclasses.run
 	make nonimmediate_subclasses.run
 	make used_nonimmediate_subclasses.run
-	make unused_nonimmediate_subclasses.run
-	make nonimmediate_subclass_properties.run
+	make properties.run
+	make language_instances.run
+	make language_subclasses.run
+	make tool_instances.run
+	make tool_subclasses.run
+	make artifacts.run
 	python3 summary.py
 
 summary.csv: *.log summary.py

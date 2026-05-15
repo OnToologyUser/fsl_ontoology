@@ -7,8 +7,12 @@ log_files = [
     "immediate_subclasses",
     "nonimmediate_subclasses",
     "used_nonimmediate_subclasses",
-    "unused_nonimmediate_subclasses",
-    "nonimmediate_subclass_properties"
+    "properties",
+    "language_instances",
+    "language_subclasses",
+    "tool_instances",
+    "tool_subclasses",
+    "artifacts"
     ]
 
 with open("summary.csv", "w", newline="", encoding="utf-8") as out:
